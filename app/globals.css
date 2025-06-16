@@ -1,26 +1,295 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+header {
+  /* display: flex;
+  align-items: center; */
+  padding: 10px 25px;
+  padding-bottom: 5px;
+  background-color: #201d27;
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.logo-container {
+  display: flex;
+  align-items: center;
+
+}
+
+/* .site-name {
+  margin-left: 10px;
+  /* font-weight: bold; */
+  /* font-size: 18px;
+  padding-bottom: 5px;
+  font-style: italic;
+} */ 
+
+
+main {
+  padding: 40px 20px;
+  min-height: 70vh;
+}
+
+footer {
+  padding: 10px 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  background-color: #f5f5f5;
+}
+/* From Uiverse.io by faxriddin20 */ 
+.button-container {
+  display: flex;
+  /* background-color: black; */
+  width: 250px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  padding-left: 250px;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+/* From Uiverse.io by ErzenXz */ 
+.input {
+  width: 150px;
+  max-width: 220px;
+  height: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+  margin-left: 50px;
+}
+
+.input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid grey;
+}
+/* From Uiverse.io by Himanshu12866 */ 
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 100px;
+  height: 20px;
+  box-shadow: 0 3px 0 #ff7272;
+  position: relative;
+  clip-path: inset(-40px 0 -5px);
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: auto calc(50% - 17px) 0;
+  height: 50px;
+  --g: no-repeat linear-gradient(#ff4e4e 0 0);
+  background: var(--g), var(--g), var(--g), var(--g);
+  background-size: 16px 14px;
+  animation:
+    move 2s infinite linear,
+    move2 2s infinite linear;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    background-position:
+      0 -50px,
+      100% -50px;
+  }
+
+  17.5% {
+    background-position:
+      0 100%,
+      100% -50px,
+      0 -50px,
+      100% -50px;
+  }
+
+  35% {
+    background-position:
+      0 100%,
+      100% 100%,
+      0 -50px,
+      100% -50px;
+  }
+
+  52.5% {
+    background-position:
+      0 100%,
+      100% 100%,
+      0 calc(100% - 16px),
+      100% -50px;
+  }
+
+  70%,
+  98% {
+    background-position:
+      0 100%,
+      100% 100%,
+      0 calc(100% - 16px),
+      100% calc(100% - 16px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes move2 {
+  0%,
+  70% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(200%);
+  }
+}
+.addtocart {
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #100720;
+  transition: 0.1s;
+}
+
+.addtocart::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.addtocart:active {
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+  transition: 0.5s;
+}
+
+/* Add to Cart Page Styles */
+.addtocart-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+
+.addtocart-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.addtocart-desc {
+  color: #666;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.addtocart-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.form-select,
+.form-input {
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.form-select:focus,
+.form-input:focus {
+  border: 1.5px solid #0070f3;
+}
+
+.form-radio-group {
+  flex-direction: row;
+  gap: 18px;
+  align-items: center;
+}
+
+.form-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1rem;
+}
+
+.form-submit-btn {
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.form-submit-btn:hover {
+  background: #005bb5;
 }
